@@ -11,5 +11,5 @@ class Knowledge < ActiveRecord::Base
     }
 
   validates :title, presence: true, uniqueness: { case_sensitive: false }
-  validates :descriptions, presence: true
+  validates :description, presence: true
 end
