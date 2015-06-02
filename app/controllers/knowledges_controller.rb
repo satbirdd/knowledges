@@ -24,7 +24,7 @@ class KnowledgesController < ApplicationController
   # POST /knowledges
   # POST /knowledges.json
   def create
-    @knowledge = Knowledge.new(knowledge_params)
+    @knowledge = Knowledge.new(knowledge_create_params)
 
     respond_to do |format|
       if @knowledge.save
@@ -68,6 +68,10 @@ class KnowledgesController < ApplicationController
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
+    def knowledge_create_params
+      params.require(:knowledge).permit(:title, :description)
+    end
+
     def knowledge_params
       params.require(:knowledge).permit(:title, :description, :status)
     end
