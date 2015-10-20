@@ -16,7 +16,7 @@
     <% @knowledges.each do |knowledge| %>
       <tr>
         <td><%= knowledge.title %></td>
-        <td><%= knowledge.description %></td>
+        <td><%= simple_format knowledge.description %></td>
         <td><%= knowledge.status %></td>
         <td><%= link_to 'Show', knowledge %></td>
         <td><%= link_to 'Edit', edit_knowledge_path(knowledge) %></td>
